@@ -1,0 +1,120 @@
+const GoogleSpreadsheet= require('google-spreadsheet');
+var Shelljs =require('shelljs');
+const Octokit = require("@octokit/rest");
+//const creds=require('./client_secret.json');
+
+const octokit =new Octokit();
+const clientAuth=new Octokit({
+
+    username: 'aloktiwari007',
+    password: 'alok@321',
+    auth:'1f613f87b4707375165d44bec65ed5959fc8a9ed'
+});
+
+const repo="testing12356";
+const ref1='heads/master';
+function hello()
+{
+    console.log(Shelljs.exec('git checkout --orphan NIIT1'));
+    Shelljs.exec('git add Readme.txt');
+    Shelljs.exec('git commit -m "Adding readme file"');
+    Shelljs.exec('git log');
+    Shelljs.exec('git remote add aloktiwari007 https://github.com/aloktiwari007/testing12356');
+    Shelljs.exec('git push aloktiwari007');
+//        if(Shelljs.exec(command).code!==0)
+//    {
+
+//    }
+
+    
+  
+       // console.log(stdout);
+
+   
+    // Shelljs('git --version',function(err, stdout, stderr){
+    //     if(err != null){
+    //         return cb(new Error(err), null);
+    //     }else if(typeof(stderr) != "string"){
+    //         return cb(new Error(stderr), null);
+    //     }else{
+    //         return cb(null, stdout);
+    //     }
+
+    //});
+
+}
+//hello();
+/*hello('temp.sh',function(err,response){
+    if(!err){
+        console.log(response.data);
+    }else {
+        console.log(err);
+    }
+
+}); */
+
+function createrepos()
+{
+clientAuth.repos.createForAuthenticatedUser({
+ name:"NIITtool"
+
+ })
+}
+createrepos();
+
+//following is the code to commit file on the github
+ function commitfile()
+{
+
+
+    var b=clientAuth.repos.createOrUpdateFile({
+
+        owner:"aloktiwari007",
+        repo:"NIITtool",
+        path:"NIIt.txt",
+        message:"first commit",
+        
+        content:Buffer.from('Hello World!1285').toString('base64'),
+        
+      
+      });
+
+
+
+
+
+
+
+ }
+commitfile();
+
+
+
+
+// async function accessSpreadsheet() {
+//     const doc=new GoogleSpreadsheet('1QVpuWpiNz9VsFENShSRt1pRblNuYIdSB7UZdYGRm2kA')
+//     await promisify(doc.useServiceAccountAuth)(creds);
+//     const info=await promisify(doc.getInfo)();
+//     const sheet=info.worksheets[0];
+//     //console.log(`Title:${sheet.title}, Rows: ${sheet.rowCount}`);
+//     const rows=await promisify(sheet.getRows)({
+//         offset:1
+
+
+//     });
+//     //  const rows=await promisify(sheet.getCells)({
+             
+//     //      rcount:sheet.rowCount
+    
+    
+//     //      });
+
+//     rows.forEach(row => {
+//         printdata(row);
+        
+//     });
+//      // console.log(rows.rcount);
+// }
+
+
+// accessSpreadsheet();
