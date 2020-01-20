@@ -23,7 +23,7 @@ function runcommand()
    // Shelljs.exec('git clone https://github.com/aloktiwari007/testing12356');
   Shelljs.exec('git add .');
   Shelljs.exec('git commit -m "msg"');
-  Shelljs.exec('git push origin NIIT7');
+  Shelljs.exec('git push origin NIIT5');
 //     Shelljs.exec('git log');
 //    Shelljs.exec('git remote add aloktiwari007 https://github.com/aloktiwari007/testing12356');
 //     Shelljs.exec('git push --set-upstream testing12356 NIIT5');
