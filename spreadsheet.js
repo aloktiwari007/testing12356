@@ -20,8 +20,9 @@ function runcommand()
 {
    // Shelljs.exec('git config --global user.name "aloktiwari007"');
     //console.log(Shelljs.exec('git checkout --orphan NIIT5'));
-  Shelljs.exec('git clone git@github.com:aloktiwari007/testing12356.git');
-  Shelljs.exec('git add .');
+ // Shelljs.exec('git clone  https://aloktiwari007:alok@321@github.com/path/to/testing102356.git');
+ Shelljs.exec('git config --global user.name "aloktiwari007"');
+ Shelljs.exec('git add .');
   Shelljs.exec('git commit -m "msg"');
   Shelljs.exec('git push origin NIIT5');
 //     Shelljs.exec('git log');
