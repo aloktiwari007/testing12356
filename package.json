@@ -1,0 +1,19 @@
+{
+  "name": "google_sheet_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@octokit/rest": "^16.35.0",
+    "copy-dir": "^1.2.0",
+    "google-spreadsheet": "^2.0.8",
+    "shelljs": "^0.8.3",
+    "simple-git": "^1.129.0"
+  }
+}
